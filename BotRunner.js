@@ -9,7 +9,7 @@ const Testing = false // This is for the Maintenance of the Bot, wont be enabled
 
 // Getting Bot Setup.
 global.Bot = new Commando.Client({
-    commandPrefix: ''
+    commandPrefix: 'tfn!"'
 })
 
 
