@@ -30,7 +30,7 @@ Bot.on("ready", function () {
         Bot.user.setStatus("idle");
         Bot.user.setActivity("Maintenance Mode On, Will Be Back Soon.")
     }    
-}
+});
 
 
 // Bot Login Process
