@@ -4,7 +4,7 @@ const Name = "TFN Bot"; // The Name of the Bot, will be used in various things.
 const Version = "0.0.1 WIP"; // The Version of the Bot, will be used in various things.
 const Discord = require('discord.js'); // The Bots Library used to Require the Bot.
 const Commando = require('discord.js-commando'); // The Bots Command Library used for Command Use.
-const Status = 'The Frosty Nation Mane.'; // The Bots Status for the Playing or Streaming.
+const Status = `tfn! | The Frosty Nation Coming Soon.`; // The Bots Status for the Playing or Streaming.
 const Testing = false; // This is for the Maintenance of the Bot, wont be enabled unless working on something.
 
 // Getting Bot Setup.
