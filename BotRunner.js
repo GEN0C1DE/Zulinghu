@@ -13,7 +13,7 @@ global.Bot = new Commando.Client({
 })
 
 
-/* Getting Bot Global Functions.
+// Getting Bot Global Functions.
 Bot.on("guildCreate", Guild => {
     console.log(`New guild joined: ${Guild.name} (id: ${Guild.id}). This guild has ${Guild.memberCount} members!`);
     if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
@@ -29,7 +29,8 @@ Bot.on("ready", function () {
     if (Testing === true) {
         Bot.user.setStatus("idle");
         Bot.user.setActivity("Maintenance Mode On, Will Be Back Soon.")
-}    */
+    }    
+}
 
 
 // Bot Login Process
