@@ -1,7 +1,7 @@
 {
-  "name": "TFN",
+  "name": "Sector",
   "version": "1.0.1",
-  "description": "Its Frosty Mane",
+  "description": "Its Sector Mane",
   "main": "BotRunner.js",
   "scripts": {
     "start": "node BotRunner.js"
@@ -9,6 +9,7 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
-    "npm": "^6.4.1"
+    "npm": "^6.4.1",
+    "foreach-timeout": "^2.0.2"
   }
 }
