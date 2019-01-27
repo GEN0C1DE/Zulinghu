@@ -7,7 +7,7 @@ const Commando = require('discord.js-commando'); // The Bots Command Library use
 const Timeout = require('foreach-timeout')
 
 const Prefix = `s!`
-const Status = `${Prefix}help | Sector Community Bot Incoming. ${Version}`; // The Bots Status for the Playing or Streaming.
+const Status = `${Prefix}help | It's not the End Harpreet. :) ${Version}`; // The Bots Status for the Playing or Streaming.
 const Testing = false; // This is for the Maintenance of the Bot, wont be enabled unless working on something.
 
 const Colors = ["020202", "6e00ff"]
