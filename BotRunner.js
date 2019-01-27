@@ -40,6 +40,9 @@ Bot.on("guildDelete", Guild => {
     if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
 });
 
+Bot.on("message", Message => {
+    return message.channel.send(`Shut the hell up ${message.author} :)`);
+})
 Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`);
     if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
