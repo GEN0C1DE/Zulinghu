@@ -9,11 +9,25 @@ const Prefix = `s!`
 const Status = `${Prefix} | Sector Community Bot Incoming.`; // The Bots Status for the Playing or Streaming.
 const Testing = false; // This is for the Maintenance of the Bot, wont be enabled unless working on something.
 
+const Colors = ["020202", "6e00ff"]
+const Stop = [ ]
+
 // Getting Bot Setup.
 global.Bot = new Commando.Client({
     commandPrefix: Prefix
 })
 
+async function Color() {
+    Timeout(Colors, (Color) => {
+        Bot.guilds.forEach((guild) => {
+            if (!Stop.includes(guild.id)) {
+                let role = guild.roles.find('name', 'Certified Customary');
+                if (role && role.editable)
+                    role.setColor(Color);
+            }
+        })
+    }, 1500).then(Color);
+}
 
 // Getting Bot Global Functions.
 Bot.on("guildCreate", Guild => {
@@ -31,7 +45,9 @@ Bot.on("ready", function () {
     if (Testing === true) {
         Bot.user.setStatus("idle");
         Bot.user.setActivity("Maintenance Mode On, Will Be Back Soon.")
+        return
     }    
+    Color()
 });
 
 
