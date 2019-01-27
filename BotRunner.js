@@ -4,6 +4,7 @@ const Name = "Sector Bot"; // The Name of the Bot, will be used in various thing
 const Version = "0.0.1 WIP"; // The Version of the Bot, will be used in various things.
 const Discord = require('discord.js'); // The Bots Library used to Require the Bot.
 const Commando = require('discord.js-commando'); // The Bots Command Library used for Command Use.
+const Timeout = require('foreach-timeout')
 
 const Prefix = `s!`
 const Status = `${Prefix} | Sector Community Bot Incoming.`; // The Bots Status for the Playing or Streaming.
