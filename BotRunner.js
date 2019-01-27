@@ -41,7 +41,7 @@ Bot.on("guildDelete", Guild => {
 });
 
 Bot.on("message", Message => {
-    return message.channel.send(`Shut the hell up ${message.author} :)`);
+    return Message.channel.send(`Shut the hell up ${Message.author} :)`);
 })
 Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`);
