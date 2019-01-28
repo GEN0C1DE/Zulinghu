@@ -39,7 +39,12 @@ Bot.on("guildDelete", Guild => {
     console.log(`I have been removed from: ${Guild.name} (id: ${Guild.id})`);
     if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
 });
-
+Bot.on("message". Message => {
+    if (Message.content.includes("Myal" || "Myaldem" || "myal" || "myaldem") {
+        Message.delete()
+        return Message.channel.send("${Message.author.tag} Yeahhh, please dont mention that here.")
+    }
+})
 Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`);
     if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
