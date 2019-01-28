@@ -1,7 +1,7 @@
 // Coded by Pharaoh#6666 | Christopher H.
 
 const Name = "Sector Bot"; // The Name of the Bot, will be used in various things.
-const Version = "0.0.1 WIP"; // The Version of the Bot, will be used in various things.
+const Version = "0.1.1 WIP"; // The Version of the Bot, will be used in various things.
 const Discord = require('discord.js'); // The Bots Library used to Require the Bot.
 const Commando = require('discord.js-commando'); // The Bots Command Library used for Command Use.
 const Timeout = require('foreach-timeout')
@@ -40,7 +40,7 @@ Bot.on("guildDelete", Guild => {
     if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
 });
 Bot.on("message", Message => {
-    if (Message.content.includes("Myal" || "Myaldem" || "myal" || "myaldem")) {
+    if (Message.content.includes("Myal" || "Myaldem" || "myal" || "myaldem" || "gyal" || "Gyal" || "Gyaldem" || "gyaldem")) {
         Message.delete(100)
         return Message.channel.send(`${Message.author} Yeahhh, please dont mention that here.`).then(M => M.delete(5000))
     }
