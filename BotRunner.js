@@ -40,7 +40,7 @@ Bot.on("guildDelete", Guild => {
     if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
 });
 Bot.on("message", Message => {
-    if (Message.content.includes("Myal" || "Myaldem" || "myal" || "myaldem" || "gyal" || "Gyal" || "Gyaldem" || "gyaldem")) {
+    if (Message.content.includes("Myal" || "Myaldem" || "myal" || "myaldem")) {
         Message.delete(100)
         return Message.channel.send(`${Message.author} Yeahhh, please dont mention that here.`).then(M => M.delete(5000))
     }
