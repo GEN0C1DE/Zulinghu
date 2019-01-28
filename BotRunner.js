@@ -41,8 +41,8 @@ Bot.on("guildDelete", Guild => {
 });
 Bot.on("message", Message => {
     if (Message.content.includes("Myal" || "Myaldem" || "myal" || "myaldem")) {
-        Message.delete()
-        return Message.channel.send("${Message.author.tag} Yeahhh, please dont mention that here.")
+        Message.delete(100)
+        return Message.channel.send(`${Message.author.tag} Yeahhh, please dont mention that here.`)
     }
 })
 Bot.on("ready", function () {
