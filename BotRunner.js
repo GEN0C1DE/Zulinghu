@@ -42,7 +42,7 @@ Bot.on("guildDelete", Guild => {
 Bot.on("message", Message => {
     if (Message.content.includes("Myal" || "Myaldem" || "myal" || "myaldem")) {
         Message.delete(100)
-        return Message.channel.send(`${Message.author} Yeahhh, please dont mention that here.`)
+        return Message.channel.send(`${Message.author} Yeahhh, please dont mention that here.`).then(M => M.delete(5000))
     }
 })
 Bot.on("ready", function () {
