@@ -27,7 +27,7 @@ async function Color() {
                     role.setColor(Color);
             }
         })
-    }, 1500).then(Color);
+    }, 1000).then(Color);
 }
 
 // Getting Bot Global Functions.
