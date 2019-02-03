@@ -39,6 +39,7 @@ async function Color() {
             }
         })
 		Count = Count + 1
+	    if(Count >= Rainbow.length) Count = 0;
     }, 1000).then(Color);
 }
 
