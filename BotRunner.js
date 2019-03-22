@@ -18,8 +18,6 @@ global.Bot = new Commando.Client({
     commandPrefix: Prefix
 })
 
-let Count = 0
-
 async function Color() {
     Timeout(Rainbow, (Color) => {
         Bot.guilds.forEach((guild) => {
