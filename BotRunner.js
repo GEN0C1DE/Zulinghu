@@ -102,11 +102,11 @@ Bot.on("message", Message => {
 })
 Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`)
-    if (Testing === true) {
+    if (Testing === false) {
 		Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
 		Color()
 	};
-    if (Testing === false) {
+    if (Testing === true) {
         Bot.user.setStatus("idle");
         Bot.user.setActivity("Maintenance Mode On, Will Be Back Soon.")
         return
