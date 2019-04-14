@@ -37,7 +37,7 @@ Mongoose.connect(Connection, {useNewUrlParser: true }).catch(Error => console.er
 Bot.on("message", Message => {
 	if (Message.author.bot) return;
 	if (Message.channel.id === "529819167017402398"){
-		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Managers 🔱
+		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Managers 🔱")
 		if (Message.member.roles.has(PartnerRole) || Message.member.hasPermission("ADMINISTRATOR")){
 			if (Message.content.includes('discord.gg/'||'discordapp.com/invite/')) {
 				XPNDLVL.findOne({
