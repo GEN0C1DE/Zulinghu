@@ -7,6 +7,7 @@ const Testing = false; // This is for the Maintenance of the Bot, wont be enable
 
 const Discord = require('discord.js'); // The Bots Library used to Require the Bot.
 const Mongoose = require('mongoose'); // The Bots Database Connection
+const Timeout = require('foreach-timeout') // The Bots Timeout Function
 
 const Bot = new Discord.Client()
 
