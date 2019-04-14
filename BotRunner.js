@@ -26,7 +26,7 @@ async function Color() {
             if (role && role.editable)
             role.setColor(Rainbow[Count]);
         })
-        Count = Count + 1
+        Count++
     }, 1500).then(Color);
 }
 
