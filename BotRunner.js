@@ -39,7 +39,7 @@ Bot.on("message", Message => {
 	if (Message.author.bot) return;
 	if (Message.channel.id === "529819167017402398"){
 		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Managers 🔱")
-		if (Message.member.roles.has(PartnerRole) || Message.member.hasPermission("ADMINISTRATOR")){
+		if (Message.member.roles.has(PartnerRole)){
 			if (Message.content.includes('discord.gg/') || Message.content.includes('discordapp.com/invite/')) {
 				XPNDLVL.findOne({
 					UserId: Message.author.id
