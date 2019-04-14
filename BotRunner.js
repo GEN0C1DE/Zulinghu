@@ -38,8 +38,7 @@ Mongoose.connect(Connection, {useNewUrlParser: true }).catch(Error => console.er
 Bot.on("message", Message => {
 	if (Message.author.bot) return;
 	if (Message.channel.id === "529819167017402398"){
-		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Managers 🔱")
-		if (Message.member.roles.has(PartnerRole)){
+	if (Message.member.roles.find(r => r.name === "🔱 Partner Managers 🔱") || Message.member.hasPermission("ADMINISTRATOR")){
 			if (Message.content.includes('discord.gg/') || Message.content.includes('discordapp.com/invite/')) {
 				XPNDLVL.findOne({
 					UserId: Message.author.id
@@ -95,7 +94,7 @@ Bot.on("message", Message => {
 						}
 						Results.save().catch(Error => console.log(Error))
 					}
-					return Bot.channels.get("521782616563646467").send(`${Message.author} **You are awarded ${NewMoney} Lyasuno's and ${NewXP} XP for Partnering!**`)
+					Bot.channels.get("521782616563646467").send(`${Message.author} **You are awarded ${NewMoney} Lyasuno's and ${NewXP} XP for Partnering!**`)
 				}) 
 			}	  
 		}
