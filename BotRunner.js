@@ -20,7 +20,7 @@ async function Color() {
         Bot.guilds.forEach((guild) => {
             let role = guild.roles.find('name', 'Certified Customary');
             if (role && role.editable)
-            role.setColor(Color[Count]);
+            role.setColor(Rainbow[Count]);
         })
         Count = Count++
     }, 1500).then(Color);
