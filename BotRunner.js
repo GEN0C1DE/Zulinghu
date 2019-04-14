@@ -14,6 +14,7 @@ const Bot = new Discord.Client();
 const Connection = `mongodb://${process.env.MonUSERTOKEN}:${process.env.MonPASSTOKEN}@ds024748.mlab.com:24748/lyaboo_server`
 const Login = process.env.BOT_TOKEN;
 const XPNDLVL = require(__dirname + "/structs/Schemas/levelSchema.js");
+const MONROLES = require(__dirname + "/structs/Schemas/roleSchema.js");
 
 // Getting Rainbow Settings.
 var Rainbow = ["FF0D00", "FF2800", "FF3D00", "FF4F00", "FF5F00", "FF6C00", "FF7800", "FF8300", "FF8C00", "FF9500", "FF9E00", "FFA500", "FFAD00", "FFB400", "FFBB00", "FFC200", "FFC900", "FFCF00", "FFD600", "FFDD00", "FFE400", "FFEB00", "FFF200", "FFFA00", "F7FE00", "E5FB00", "D5F800", "C6F500", "B7F200", "A8F000", "98ED00", "87EA00", "74E600", "5DE100", "41DB00", "1DD300", "00C618", "00BB3F", "00B358", "00AC6B", "00A67C", "009E8E", "028E9B", "06799F", "0969A2", "0C5DA5", "0E51A7", "1047A9", "133CAC", "1531AE", "1924B1", "1F1AB2", "2A17B1", "3415B0", "3C13AF", "4512AE", "4E10AE", "560EAD", "600CAC", "6A0AAB", "7608AA", "8506A9", "9702A7", "AD009F", "BC008D", "C7007D", "D0006E", "D8005F", "DF004F", "E7003E", "EF002A", "F80012"];
@@ -38,15 +39,15 @@ Bot.on("message", Message => {
 	if (Message.author.bot) return;
 	if (Message.channel.id === "529819167017402398"){
 		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Managers 🔱")
-		if (Message.member.roles.has(PartnerRole)){
+		if (Message.member.roles.has(PartnerRole) || Message.member.hasPermission("ADMINISTRATOR")){
 			if (Message.content.includes('discord.gg/') || Message.content.includes('discordapp.com/invite/')) {
 				XPNDLVL.findOne({
 					UserId: Message.author.id
 				}, (Error, Results) => {
-					let NewXP = Math.floor(Math.random() * 7) + 8 + 85 * 2;
-					let NewMoney = Math.floor(200 + (Math.random() * 5 * 2) )
+					let NewXP = Math.floor(Math.random() * 7) + 8 + 85;
+					let NewMoney = 200 + (Math.random() * 5 * 2) 
 					if (!Results) {
-						let Level = new Settings.Schemas.Level({
+						let Level = new XPNDLVL({
 							UserId: Message.author.id,
 							LevelNumber: 1,
 							XPNumber: NewXP,
@@ -72,7 +73,7 @@ Bot.on("message", Message => {
 							Message.channel.send(`${Message.author}`, Embed).then(MSG => MSG.delete(10000)) 
 							Results.XPNumber = 0
 						
-							Settings.Schemas.Role.findOne({
+							MONROLES.findOne({
 								ServerID: Message.guild.id
 							}, (Error, Results) => {
 								if(Error) console.error(Error);
