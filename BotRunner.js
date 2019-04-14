@@ -15,10 +15,12 @@ const Connection = `mongodb://${process.env.MonUSERTOKEN}:${process.env.MonPASST
 const Login = process.env.BOT_TOKEN;
 const XPNDLVL = require(__dirname + "/structs/Schemas/levelSchema.js");
 const MONROLES = require(__dirname + "/structs/Schemas/roleSchema.js");
-const Servers = ["521782616563646465"];
-const Rainbow = new Array(Size);
+
 let Place = 0;
 let Size = 12;
+const Servers = ["521782616563646465"];
+const Rainbow = new Array(Size);
+
 
 for (var i=0; i<Size; i++) {
   var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg
