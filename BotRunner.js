@@ -28,6 +28,7 @@ async function Color() {
             role.setColor(Rainbow[Count]);
         })
         Count++
+		if (Count === #Rainbow) Count = 0;
     }, 1500).then(Color);
 }
 
