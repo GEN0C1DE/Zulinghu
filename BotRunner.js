@@ -68,7 +68,7 @@ Bot.on("message", Message => {
 						if(NextLevel <= Results.XPNumber){
 							Results.LevelNumber = Results.LevelNumber + 1;
 							let NewLevel = Results.LevelNumber
-							let Embed = new Depends.Discord.RichEmbed()
+							let Embed = new Discord.RichEmbed()
 							.setColor("6e00ff")
 							.setTitle("Congratulations!")
 							.setDescription(`You have leveled up to Level ${NewLevel}`);
