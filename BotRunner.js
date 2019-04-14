@@ -101,15 +101,16 @@ Bot.on("message", Message => {
 	}
 })
 Bot.on("ready", function () {
-    console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot
-    if (Testing === true) {.guilds.size}`);
-    if (Testing === false) {
+    console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`)
+    if (Testing === true) {
 		Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
+		Color()
+	};
+    if (Testing === false) {
         Bot.user.setStatus("idle");
         Bot.user.setActivity("Maintenance Mode On, Will Be Back Soon.")
         return
     }    
-    Color()
 });
 
 
