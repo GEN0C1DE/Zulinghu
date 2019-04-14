@@ -38,13 +38,13 @@ Bot.on("message", Message => {
 	if (Message.author.bot) return;
 	if (Message.channel.id === "529819167017402398"){
 		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Managers 🔱")
-		if (Message.member.roles.has(PartnerRole) || Message.member.hasPermission("ADMINISTRATOR")){
+		if (Message.member.roles.has(PartnerRole)){
 			if (Message.content.includes('discord.gg/') || Message.content.includes('discordapp.com/invite/')) {
 				XPNDLVL.findOne({
 					UserId: Message.author.id
 				}, (Error, Results) => {
-					let NewXP = Math.floor(Math.random() * 7) + 8 + 85;
-					let NewMoney = 200 + (Math.random() * 5 * 2) 
+					let NewXP = Math.floor(Math.random() * 7) + 8 + 85 * 2;
+					let NewMoney = Math.floor(200 + (Math.random() * 5 * 2) )
 					if (!Results) {
 						let Level = new Settings.Schemas.Level({
 							UserId: Message.author.id,
