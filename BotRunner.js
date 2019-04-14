@@ -127,7 +127,7 @@ Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`)
     if (Testing === false) {
 		Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
-		setInterval(changeColor, 1000);
+		setInterval(changeColor, 5000);
 	};
     if (Testing === true) {
         Bot.user.setStatus("idle");
