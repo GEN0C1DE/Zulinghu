@@ -17,7 +17,7 @@ const XPNDLVL = require(__dirname + "/structs/Schemas/levelSchema.js");
 const MONROLES = require(__dirname + "/structs/Schemas/roleSchema.js");
 
 let Place = 0;
-let Size = 12;
+let Size = 255;
 const Servers = ["521782616563646465"];
 const Rainbow = new Array(Size);
 
