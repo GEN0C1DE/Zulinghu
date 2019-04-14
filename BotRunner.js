@@ -38,8 +38,11 @@ Mongoose.connect(Connection, {useNewUrlParser: true }).catch(Error => console.er
 Bot.on("message", Message => {
 	if (Message.author.bot) return;
 	if (Message.channel.id === "529819167017402398"){
+		console.log("Is Channel")
 	if (Message.member.roles.find(r => r.name === "🔱 Partner Managers 🔱") || Message.member.hasPermission("ADMINISTRATOR")){
+			console.log("Is Partner Manager")
 			if (Message.content.includes('discord.gg/') || Message.content.includes('discordapp.com/invite/')) {
+				console.log("Invite Found")
 				XPNDLVL.findOne({
 					UserId: Message.author.id
 				}, (Error, Results) => {
