@@ -17,7 +17,7 @@ const XPNDLVL = require(__dirname + "/structs/Schemas/levelSchema.js");
 const MONROLES = require(__dirname + "/structs/Schemas/roleSchema.js");
 
 let Place = 0;
-let Size = 255;
+let Size = 24;
 const Servers = ["521782616563646465"];
 const Rainbow = new Array(Size);
 
@@ -127,7 +127,7 @@ Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`)
     if (Testing === false) {
 		Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
-		setInterval(changeColor, 1000);
+		setInterval(changeColor, 5000);
 	};
     if (Testing === true) {
         Bot.user.setStatus("idle");
