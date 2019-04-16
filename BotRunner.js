@@ -23,7 +23,7 @@ Bot.on("message", Message => {
 	if (Message.author.bot) return;
 	if (Message.channel.id === "529819167017402398"){
 		console.log("Is Channel")
-		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Managers 🔱");
+		let PartnerRole = Message.guild.roles.find("name", "🔱 Partner Team 🔱");
 		if (Message.member.roles.has(PartnerRole.id) || Message.member.hasPermission("ADMINISTRATOR")){
 			console.log("Is Partner Manager")
 			if (Message.content.includes('discord.gg/') || Message.content.includes('discordapp.com/invite/')) {
