@@ -7,7 +7,6 @@ const Testing = false; // This is for the Maintenance of the Bot, wont be enable
 
 const Discord = require('discord.js'); // The Bots Library used to Require the Bot.
 const Mongoose = require('mongoose'); // The Bots Database Connection
-const Timeout = require('foreach-timeout'); // The Bots Timeout Function
 
 const Bot = new Discord.Client();
 
@@ -15,41 +14,6 @@ const Connection = `mongodb://${process.env.MonUSERTOKEN}:${process.env.MonPASST
 const Login = process.env.BOT_TOKEN;
 const XPNDLVL = require(__dirname + "/structs/Schemas/levelSchema.js");
 const MONROLES = require(__dirname + "/structs/Schemas/roleSchema.js");
-
-let Place = 0;
-let Size = 24;
-const Servers = ["521782616563646465"];
-const Rainbow = new Array(Size);
-
-
-for (var i=0; i<Size; i++) {
-  var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg
-  var blue  = sin_to_hex(i, 1 * Math.PI * 2/3); // 120 deg
-  var green = sin_to_hex(i, 2 * Math.PI * 2/3); // 240 deg
-
-  Rainbow[i] = '#'+ red + green + blue;
-}
-
-function sin_to_hex(i, phase) {
-  var sin = Math.sin(Math.PI / Size * 2 * i + phase);
-  var int = Math.floor(sin * 127) + 128;
-  var hex = int.toString(16);
-
-  return hex.length === 1 ? '0'+hex : hex;
-}
-
-function changeColor() {
-  for (let index = 0; index < Servers.length; ++index) {		
-    Bot.guilds.get(Servers[index]).roles.find('name', "Certified Customary").setColor(Rainbow[Place])
-		.catch(console.error);
-	
-    if(Place == (Size - 1)){
-      Place = 0;
-    }else{
-      Place++;
-    }
-  }
-}
 
 // Opening Connections
 Mongoose.connect(Connection, {useNewUrlParser: true }).catch(Error => console.error(Error))
@@ -123,12 +87,10 @@ Bot.on("message", Message => {
 		}
 	}
 })
+
 Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`)
-    if (Testing === false) {
-		Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
-		setInterval(changeColor, 5000);
-	};
+    if (Testing === false) Bot.user.setActivity(`${Status}`, { type: "STREAMING" });
     if (Testing === true) {
         Bot.user.setStatus("idle");
         Bot.user.setActivity("Maintenance Mode On, Will Be Back Soon.")
