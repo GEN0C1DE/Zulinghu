@@ -30,7 +30,7 @@ Bot.on('guildMemberAdd', Member => {
     Invites[Member.guild.id] = guildInvites;
     
 	const Invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const Inviter = Bot.users.get(invite.inviter.id);
+    const Inviter = Bot.users.get(Invite.inviter.id);
     
 	if (Inviter.roles.find(r => r.name === "?? Recruitment Team ??") || Inviter.hasPermission("ADMINISTRATOR")){
 		XPNDLVL.findOne({
