@@ -172,8 +172,6 @@ Bot.on("ready", function () {
 			  Invites[g.id] = guildInvites;
 			});
 		});
-		
-		setInterval(changeColor, 1000);
 	};
     if (Testing === true) {
         Bot.user.setStatus("idle");
