@@ -66,7 +66,7 @@ Bot.on('guildMemberAdd', Member => {
 					Results.XPNumber = 0
 						
 					MONROLES.findOne({
-						ServerID: Message.guild.id
+						ServerID: Member.guild.id
 					}, (Error, Results) => {
 						if(Error) console.error(Error);
 						if (!Results) return;
@@ -74,7 +74,7 @@ Bot.on('guildMemberAdd', Member => {
 							Roles.forEach((array) => {
 								let LvlNum = array[0]
 								let RoleID = array[1]
-								let ARole = Message.guild.roles.get(RoleID)
+								let ARole = Member.guild.roles.get(RoleID)
 									
 								if(!ARole) return;
 								if(!LvlNum) return;
