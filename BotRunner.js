@@ -3,7 +3,7 @@
 const Name = "Zulinghu"; // The Name of the Bot, will be used in various things.
 const Version = "0.1.2 WIP"; // The Version of the Bot, will be used in various things.
 const Status = `=info | Zulinghu Rewards System!`; // The Bots Status for the Playing or Streaming.
-const Testing = false; // This is for the Maintenance of the Bot, wont be enabled unless working on something.
+const Testing = true; // This is for the Maintenance of the Bot, wont be enabled unless working on something.
 
 const Discord = require('discord.js'); // The Bots Library used to Require the Bot.
 const Mongoose = require('mongoose'); // The Bots Database Connection
