@@ -34,12 +34,14 @@ Bot.on('guildMemberAdd', Member => {
     
 	if (Inviter.roles.find(r => r.name === "?? Recruitment Team ??") || Inviter.hasPermission("ADMINISTRATOR")){
 		XPNDLVL.findOne({
+			ServerId: Member.guild.id,
 			UserId: Inviter.id
 		}, (Error, Results) => {
 			let NewXP = Math.floor(Math.random() * 7) + 8 + 85 * 2;
 			let NewMoney = Math.floor(200 + (Math.random() * 5 * 2))
 			if (!Results) {
 				let Level = new XPNDLVL({
+					ServerId: Member.guild.id,
 					UserId: Inviter.id,
 					LevelNumber: 1,
 					XPNumber: NewXP,
@@ -101,12 +103,14 @@ Bot.on("message", Message => {
 			if (Message.content.includes('discord.gg/') || Message.content.includes('discordapp.com/invite/')) {
 				console.log("Invite Found")
 				XPNDLVL.findOne({
+					ServerId: Message.guild.id,
 					UserId: Message.author.id
 				}, (Error, Results) => {
 					let NewXP = Math.floor(Math.random() * 7) + 8 + 85 * 2;
 					let NewMoney = Math.floor(200 + (Math.random() * 5 * 2))
 					if (!Results) {
 						let Level = new XPNDLVL({
+							ServerId: Message.guild.id,
 							UserId: Message.author.id,
 							LevelNumber: 1,
 							XPNumber: NewXP,
