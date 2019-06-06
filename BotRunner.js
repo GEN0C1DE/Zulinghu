@@ -3,7 +3,7 @@
 const Name = "Zulinghu"; // The Name of the Bot, will be used in various things.
 const Version = "0.1.2 WIP"; // The Version of the Bot, will be used in various things.
 const Status = `=info | Zulinghu Rewards System!`; // The Bots Status for the Playing or Streaming.
-const Testing = true; // This is for the Maintenance of the Bot, wont be enabled unless working on something.
+const Testing = false; // This is for the Maintenance of the Bot, wont be enabled unless working on something.
 
 const Discord = require('discord.js'); // The Bots Library used to Require the Bot.
 const Mongoose = require('mongoose'); // The Bots Database Connection
@@ -167,7 +167,7 @@ Bot.on("message", Message => {
 Bot.on("ready", function () {
     console.log(`${Name}: Loaded and is ready for Usage. Online at ${Bot.guilds.size}`)
     if (Testing === false) {
-		Bot.user.setActivity(`${Status}`, { type: "STREAMING" })
+		Bot.user.setActivity(`${Status}`, { type: "STREAMING", url: "https://twitch.tv/Zulinghu" })
 		
 		Wait(1000);
 
